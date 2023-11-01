@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand">SaleApp </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/category">Loại sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/product">Sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user">Tài khoản</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:if="${#authorization.expression('isAuthenticated()')}" th:href="@{/logout}">Đăng xuất</a>
+                    <a class="nav-link" th:unless="${#authorization.expression('isAuthenticated()')}"
+                       th:href="@{/login}">Đăng nhập</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: blue;" class="nav-link" th:if="${#authorization.expression('isAuthenticated()')}"
+                       href="/">Hello <span th:text="${#authentication.name}"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

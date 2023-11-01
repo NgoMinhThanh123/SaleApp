@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title th:text="${title}">Default Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        footer {
+            margin-top: auto;
+            text-align: center;
+        }
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="header"></div>
+<div class="container">
+    <section class="container">
+        <h1 class="text-center text-success mt-1">DANH SÁCH SẢN PHẨM</h1>
+
+        <div class="d-flex justify-content-between">
+            <div>
+                <a th:href="@{/add_product}" class="btn btn-info mt-1">Thêm sản phẩm</a>
+            </div>
+            <div>
+                <form class="d-flex" th:action="@{/product}">
+                    <input class="form-control me-2" name="kw" type="text" placeholder="Nhập từ khóa..." th:value="${keyword}">
+                    <button class="btn btn-primary" type="submit">Tìm</button>
+                </form>
+            </div>
+        </div>
+        <ul class="pagination mt-1">
+            <li class="page-item"><a class="page-link" th:href="@{/product?page=1}">Tất cả</a></li>
+            <th:block th:each="i : ${#numbers.sequence(0, productPage.totalPages-1)}">
+                <li class="page-item"><a class="page-link" th:href="@{/product(page=${i})}" th:text="${i}+1"></a></li>
+            </th:block>
+        </ul>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Mã loại</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product : ${productPage}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.categoryId.name}"></td>
+                <td>
+
+                    <a th:href="@{/update_product/{id}(id=${product.id})}" class="btn btn-info">Cập nhật</a>
+                    <button class="btn btn-danger" th:attr="data-product-id=${product.id}" onclick="deleteFaculty('/api/update_product/' + this.getAttribute('data-product-id'))">Xóa</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <script th:src="@{main.js}"></script>
+</div>
+<div th:replace="footer"></div>
+</body>
+</html>
+

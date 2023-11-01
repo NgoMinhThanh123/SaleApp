@@ -1,0 +1,15 @@
+.product-price {
+    color: #d0021c;
+}
+
+.product {
+    font-weight: bold;
+}
+
+.col-product-image {
+    border: 1px solid rgb(216, 212, 212);
+}
+
+.comment {
+    margin-top: 10px;
+}

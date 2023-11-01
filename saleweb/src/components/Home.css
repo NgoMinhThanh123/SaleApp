@@ -1,0 +1,29 @@
+.home-carousel {
+    margin-bottom: 10px;
+}
+
+.custom-card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: black;
+}
+
+.custom-card-price {
+    font-weight: bold;
+    color: #d0021c;
+    font-size: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    align-items: center; /* Đưa nút vào giữa theo chiều dọc */
+  }
+
+  .detail {
+    text-decoration: none;
+    color: black;
+    align-items: center;
+  }
