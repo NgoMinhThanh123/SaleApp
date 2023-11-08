@@ -1,5 +1,6 @@
 package com.nmt.saleapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.Date;
+import java.util.Set;
 
 @Data
 @ToString
@@ -27,4 +29,6 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "commentId")
+    private Set<Preview> previewSet;
 }

@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eee4cfbd-ddf0-4d5d-a3de-1637124c0d86" name="Changes" comment="" />
+    <list default="true" id="eee4cfbd-ddf0-4d5d-a3de-1637124c0d86" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saleweb/src/components/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/saleweb/src/components/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saleweb/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/saleweb/src/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saleweb/src/components/ProductDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/saleweb/src/components/ProductDetails.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saleweb/src/components/ProductDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/saleweb/src/components/ProductDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saleweb/src/configs/Apis.js" beforeDir="false" afterPath="$PROJECT_DIR$/saleweb/src/configs/Apis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saleweb/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/saleweb/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saleweb/src/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/saleweb/src/layout/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/controller/ApiProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/controller/ApiProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/dto/CommentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/dto/CommentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/repository/CommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/service/Impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nmt/saleapp/service/Impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,9 +35,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,26 +62,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/SaleApp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "spring.configuration.checksum": "b574a580f81e25b7dd2d69e4683a4c0e",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/SaleApp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b574a580f81e25b7dd2d69e4683a4c0e&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="SaleAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -99,6 +126,14 @@
       <workItem from="1698835304597" duration="616000" />
       <workItem from="1698852810020" duration="4003000" />
       <workItem from="1698867706461" duration="698000" />
+      <workItem from="1698936476757" duration="7000" />
+      <workItem from="1698936503368" duration="9939000" />
+      <workItem from="1699043607584" duration="12000" />
+      <workItem from="1699043638456" duration="2361000" />
+      <workItem from="1699106050495" duration="5550000" />
+      <workItem from="1699373558618" duration="42000" />
+      <workItem from="1699374259106" duration="1894000" />
+      <workItem from="1699410849018" duration="1419000" />
     </task>
     <servers />
   </component>
@@ -110,15 +145,20 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/nmt/saleapp/service/Impl/CommentServiceImpl.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="1" />
+          <line>45</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nmt/saleapp/controller/ApiProductController.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/nmt/saleapp/controller/ApiPreviewController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.Long" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

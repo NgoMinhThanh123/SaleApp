@@ -1,5 +1,6 @@
 package com.nmt.saleapp.controller;
 
+import com.nmt.saleapp.dto.CommentAndRating;
 import com.nmt.saleapp.dto.CommentDto;
 import com.nmt.saleapp.model.Category;
 import com.nmt.saleapp.model.Comment;
@@ -95,8 +96,8 @@ public class ApiProductController {
     }
 
     @PostMapping(path="/comments/", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Comment> addComment(@RequestBody Comment comment) {
-        Comment c = this.commentService.save(comment);
+    public ResponseEntity<CommentAndRating> addComment(@RequestBody CommentAndRating commentAndRating) {
+        CommentAndRating c = this.commentService.save(commentAndRating);
 
         return new ResponseEntity<>(c, HttpStatus.CREATED);
     }

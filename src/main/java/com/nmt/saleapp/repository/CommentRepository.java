@@ -16,7 +16,7 @@ public interface CommentRepository extends JpaRepository<Comment, Integer> {
     Comment save(Comment u);
     void deleteById(int id);
 
-    @Query("select new com.nmt.saleapp.dto.CommentDto(c.id, c.content, c.createdDate, c.user, c.product ) " +
+    @Query("select new com.nmt.saleapp.dto.CommentDto(c.content, c.createdDate, c.user, c.product) " +
             "from Comment c " +
             "join Product p on p.id = c.product.id " +
             "where p.id = :productId")

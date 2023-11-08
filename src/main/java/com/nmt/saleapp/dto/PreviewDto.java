@@ -1,6 +1,6 @@
 package com.nmt.saleapp.dto;
 
-import com.nmt.saleapp.model.Preview;
+import com.nmt.saleapp.model.Comment;
 import com.nmt.saleapp.model.Product;
 import com.nmt.saleapp.model.User;
 import lombok.AllArgsConstructor;
@@ -12,9 +12,10 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CommentDto {
-    private String content;
-    private Date createdDate;
+public class PreviewDto {
+    private Integer id;
+    private Date dateCreated;
+    private Integer preview;
     private User user;
-    private Product product;
+    private Comment comment;
 }

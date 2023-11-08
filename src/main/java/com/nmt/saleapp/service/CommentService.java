@@ -1,5 +1,6 @@
 package com.nmt.saleapp.service;
 
+import com.nmt.saleapp.dto.CommentAndRating;
 import com.nmt.saleapp.dto.CommentDto;
 import com.nmt.saleapp.model.Category;
 import com.nmt.saleapp.model.Comment;
@@ -13,7 +14,7 @@ import java.util.Optional;
 public interface CommentService {
     List<Comment> findAll();
     Optional<Comment> findById(int id);
-    Comment save(Comment c);
+    CommentAndRating save(CommentAndRating c);
     boolean deleteComment(int id);
     List<CommentDto> getCommentByProductId(@Param("productId") int productId);
 }

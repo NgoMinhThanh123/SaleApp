@@ -9,11 +9,35 @@ import "./Home.css"
 
 const Home = () => {
     const [, cartDispatch] = useContext(MyCartContext);
-    const [products, setProducts] = useState(null);
-    const [codeStatus, setCodeStatus] = useState(null);
+    const [products, setProducts] = useState([]);
+    const [numberSales, setNumberSales] = useState(null);
+    const [salesData, setSalesData] = useState({});
     const [q] = useSearchParams();
-    const [visibleProductCount, setVisibleProductCount] = useState(12);
-    const productsPerPage = 12;
+    const [visibleProductCount, setVisibleProductCount] = useState(20);
+    const productsPerPage = 20;
+
+    const [visible, setVisible] = useState(false) 
+  
+    const toggleVisible = () => { 
+      const scrolled = document.documentElement.scrollTop; 
+      if (scrolled > 300){ 
+        setVisible(true) 
+      }  
+      else if (scrolled <= 300){ 
+        setVisible(false) 
+      } 
+    }; 
+    
+    const scrollToTop = () =>{ 
+      window.scrollTo({ 
+        top: 0,  
+        behavior: 'smooth'
+        /* you can also use 'auto' behaviour 
+           in place of 'smooth' */
+      }); 
+    }; 
+    
+    window.addEventListener('scroll', toggleVisible); 
 
     useEffect(() => {
         const loadProducts = async () => {
@@ -31,6 +55,25 @@ const Home = () => {
             
             let res = await Apis.get(e);
             setProducts(res.data);
+            let pro = res.data;
+
+             // Lặp qua từng sản phẩm để gọi API lấy số lượng bán
+             const salesPromises = res.data.map((product) => {
+                return Apis.get(endpoints['numberOfSale'](product.id));
+            });
+
+            // Chạy tất cả các promise và lấy số lượng bán tương ứng
+            const salesDataArray = await Promise.all(salesPromises);
+
+            // Tạo một đối tượng với id sản phẩm và số lượng bán tương ứng
+            const salesDataObject = {};
+            salesDataArray.forEach((sales, index) => {
+                salesDataObject[pro[index].id] = sales.data;
+            });
+
+            setSalesData(salesDataObject);
+            console.log(salesDataObject);
+
            } catch (ex) {
                console.error(ex);
            }
@@ -38,6 +81,17 @@ const Home = () => {
 
         loadProducts();
     }, [q]); 
+
+
+    // const loadNumberOfSale = async () => {
+    //     let {data} = await Apis.get(endpoints['numberOfSale'](products.id));
+    //     setNumberSales(data);
+    //     console.log(data);
+
+    // }
+
+    // loadNumberOfSale();
+
 
     const order = (product) => {
         cartDispatch({
@@ -113,14 +167,36 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
+            <div className="button-contact">
+                <Link to="https://www.facebook.com/thegioididongcom">
+                    <Button variant="primary" className="facebook-button">
+                        <i className="fab fa-facebook-f"></i>
+                    </Button>
+                </Link>
+                <Link to="tel:0354472852">
+                <Button variant="danger" className="hotline-button">
+                    <i className="fas fa-phone-alt"></i>
+                </Button>
+                </Link>
+                <Button
+                        variant="info"
+                        className="go-to-top-button"
+                        onClick={scrollToTop}
+                        style={{display: visible ? 'inline' : 'none'}}
+                    >
+                        <i className="fas fa-arrow-up"></i>
+                </Button>                
+            </div>
             <Row>
+            <ul className="list-product">
+
                 {products.slice(0, visibleProductCount).map((p) => {
                     let url = `/products/${p.id}`;
                     return <>
-                        <Col xs={12} md={3} className="mt-2 mb-2" key={p.id}>
-                            <Card style={{ width: '18rem'}}>
+                        <li>
+                            <Card style={{ width: '100%', padding: "5px"}} className="custom-card">
                             <Link to={url} className="detail">
-                                <Card.Img style={{ width: '100%', height: '15rem'}}  variant="top" src={p.image} fluid="true" className="rounded" />
+                                <Card.Img style={{ width: '100%', height: '16rem'}}  variant="top" src={p.image} fluid="true" className="rounded" />
                             </Link>
                                 <Card.Body>
                                 <Link to={url} className="detail">
@@ -128,16 +204,18 @@ const Home = () => {
                                     <Card.Text className="custom-card-price">{formatPrice(p.price)}</Card.Text>
                                 </Link>
                                     <div className="button-container">
-                                    <Button variant="success" onClick={() => order(p)}>
+                                    <Button className="btn-order" onClick={() => order(p)}>
                                     <i className="fas fa-shopping-cart"></i> Đặt hàng
                                     </Button>
+                                    <div className="number-sales">{salesData[p.id]?.numberSales} lượt bán</div>
                                     </div>
                                 </Card.Body>
                             </Card>
-                        </Col>
-                        
+                        </li>
+                    
                     </>;
                 })}
+            </ul>
             </Row>
             {visibleProductCount < products.length && (
                 <div className="text-center mt-3">

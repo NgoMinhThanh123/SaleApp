@@ -14,6 +14,10 @@ export const endpoints = {
     "details": (productId) => `${SERVER_CONTEXT}/api/products/${productId}/`,
     "comments": (productId) => `${SERVER_CONTEXT}/api/products/${productId}/comments/`,
     "add-comment": `${SERVER_CONTEXT}/api/comments/`,
+    "previews": (productId) => `${SERVER_CONTEXT}/api/products/${productId}/previews/`,
+    "add-preview": `${SERVER_CONTEXT}/api/previews/`,
+    "preview-product": (productId) =>`${SERVER_CONTEXT}/api/previews/${productId}/`,
+    "numberOfSale": (productId) =>`${SERVER_CONTEXT}/api/oder-detail/${productId}/`,
 }
 
 export const authApi = () => {

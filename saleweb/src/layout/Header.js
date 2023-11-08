@@ -57,7 +57,7 @@ const Header = () => {
                         
                        
                     </>: <>
-                        <Link className="nav-link text-danger" to="/">Chào {user.username}!</Link>
+                        <Link className="nav-link text-danger" to="/">Chào {user.firstName}!</Link>
                         <Button variant="secondary" onClick={logout}>Đăng xuất</Button>
                     </>}
                     <Link className="nav-link cart" to="/cart">Giỏ hàng &#128722; <Badge bg="danger">{cartCounter}</Badge></Link>
