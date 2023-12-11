@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.nmt.saleapp.SaleAppApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.725 s - in com.nmt.saleapp.SaleAppApplicationTests
